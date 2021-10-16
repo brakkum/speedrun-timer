@@ -228,6 +228,7 @@ function Timer() {
           Pauses
             {pauses.map(pause => {
               return <PauseDetails
+                key={pause.id}
                 pause={pause}
               />
             })}
