@@ -196,7 +196,15 @@ function Timer() {
           {getTimeDisplay()}
         </div>
 
-        {pauses.length !== 0 && <div style={{color: 'white', width: '60%', margin: 'auto'}}>
+        {pauses.length !== 0 && <div
+          style={{
+            color: 'white',
+            width: '60%',
+            margin: 'auto',
+            fontFamily: 'monospace',
+            textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
+          }}
+        >
           Pauses
             {pauses.map(pause => {
               return <PauseDetails
