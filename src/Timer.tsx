@@ -20,16 +20,21 @@ function Timer() {
   // for re-rendering
   const [time, setTime] = useState(Date.now());
 
-  useEffect(() => {
-    const interval = setInterval(() => setTime(Date.now), 1);
-    return () => clearInterval(interval);
-  }, []);
-
   const [startTime, setStartTime] = useLocalStorage<number | null>('start-time', null);
   const [endTime, setEndTime] = useLocalStorage<number | null>('end-time', null);
   const [pauseStartTime, setPauseStartTime] = useLocalStorage<number | null>('pause-start-time', null);
   const [pauses, setPauses] = useLocalStorage<Pause[]>('pauses', []);
   const [color, setColor] = useLocalStorage('color', '#0000ff');
+
+  useEffect(() => {
+    const interval = setInterval(() => setTime(Date.now), 1);
+    document.getElementsByTagName('html')[0].style.backgroundColor = color;
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    document.getElementsByTagName('html')[0].style.backgroundColor = color;
+  }, [color]);
 
   const getCurrentTime = () => {
     return Date.now();
@@ -115,7 +120,6 @@ function Timer() {
       style={{
         height: '100vh',
         width: '100vw',
-        backgroundColor: color
       }}>
       <div
         style={{
