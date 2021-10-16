@@ -29,6 +29,7 @@ function Timer() {
   const [endTime, setEndTime] = useLocalStorage<number | null>('end-time', null);
   const [pauseStartTime, setPauseStartTime] = useLocalStorage<number | null>('pause-start-time', null);
   const [pauses, setPauses] = useLocalStorage<Pause[]>('pauses', []);
+  const [color, setColor] = useLocalStorage('color', '#0000ff');
 
   const getCurrentTime = () => {
     return Date.now();
@@ -114,7 +115,7 @@ function Timer() {
       style={{
         height: '100vh',
         width: '100vw',
-        backgroundColor: 'blue'
+        backgroundColor: color
       }}>
       <div
         style={{
@@ -135,7 +136,26 @@ function Timer() {
             textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
           }}
         >
-          {time}
+          <span>
+            {time}
+          </span>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              width: '50px',
+              margin: '10px auto',
+            }}
+          >
+            <span style={{margin: '5px'}}>
+              Color
+            </span>
+            <input
+              type='color'
+              value={color}
+              onChange={e => setColor(e.target.value)}
+            />
+          </div>
         </div>
         <div
           style={{
