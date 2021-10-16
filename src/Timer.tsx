@@ -131,7 +131,7 @@ function Timer() {
             margin: '20px',
             fontFamily: 'monospace',
             textAlign: 'center',
-            fontSize: '8px',
+            fontSize: '16px',
             color: 'white',
             textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
           }}
@@ -222,6 +222,7 @@ function Timer() {
             width: '60%',
             margin: 'auto',
             fontFamily: 'monospace',
+            fontSize: '18px',
             textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
           }}
         >
