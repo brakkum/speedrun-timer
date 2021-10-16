@@ -28,7 +28,6 @@ function Timer() {
 
   useEffect(() => {
     const interval = setInterval(() => setTime(Date.now), 1);
-    document.getElementsByTagName('html')[0].style.backgroundColor = color;
     return () => clearInterval(interval);
   }, []);
 
