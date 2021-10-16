@@ -189,7 +189,7 @@ function Timer() {
             margin: '50px',
             fontFamily: 'monospace',
             fontSize: '42px',
-            color: isEnded ? 'greenyellow' : isPaused ? 'dimgrey' : 'white',
+            color: isEnded ? 'lawngreen' : isPaused ? 'dimgrey' : 'white',
             textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
           }}
         >
